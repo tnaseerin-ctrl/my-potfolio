@@ -1,5 +1,6 @@
 # my-potfolio website
 
+LINK-PREVIEW:
 file:///C:/Users/tnase/OneDrive/Documents/potfolio%20project/mypotfolio1.html
 
 this is my personal potfolio website,built with HTML,CSS AND JAVASCRIPT.
