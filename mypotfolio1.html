@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Georgia", serif;
+      background: #dadab8;
+      color: #111;
+    }
+    html {
+      scroll-behavior: smooth; /* Smooth scroll effect */
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      flex-wrap: wrap;
+      background: #f1efec;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #000;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      transition: 0.3s;
+    }
+    nav a.active {
+      color: #eed302;
+      font-weight: bold;
+      border-bottom: 2px solid #eed302;
+      padding-bottom: 3px;
+    }
+    /* Sections general */
+    section {
+      padding: 80px 40px; /* normal spacing, no forced full height */
+    }
+    /* Home (Intro) fills screen */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* Intro */
+    .intro {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .intro img {
+      width: 300px;
+      border-radius: 10px;
+    }
+    .intro-text h2 {
+      font-size: 48px;
+      margin: 0 0 15px;
+    }
+    .intro-text p {
+      max-width: 500px;
+      line-height: 1.6;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 25px;
+      border: 1px solid #000;
+      background: transparent;
+      text-decoration: none;
+      color: #000;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background: #000;
+      color: #fff;
+    }
+    /* Skills */
+    .skills {
+      background: #f1efec;
+      text-align: center;
+    }
+    .skills h2 {
+      font-size: 36px;
+    }
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+    .skills .skill-card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      position: relative;
+    }
+    .skills img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      position: absolute;
+      top: -35px;
+      left: calc(50% - 35px);
+      border: 3px solid #fff;
+    }
+    .stars {
+      margin: 50px 0 15px;
+      color: #eed302;
+      font-size: 20px;
+    }
+    /* Contact */
+    .contact-section {
+      text-align: center;
+      padding-bottom: 40px; /* reduce bottom space */
+    }
+    .contact-section h2 {
+      font-size: 32px;
+      margin: 20px 0;
+    }
+    .contact-section p {
+      max-width: 700px;
+      margin: 20px auto;
+      line-height: 1.6;
+    }
+    .contact-info p:last-child {
+      margin-bottom: 0; /* remove extra gap */
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        text-align: center;
+      }
+      nav a {
+        margin: 0 10px;
+        font-size: 13px;
+      }
+      .intro-text h2 {
+        font-size: 32px;
+      }
+      .intro img {
+        width: 250px;
+      }
+      .skills h2,
+      .contact-section h2 {
+        font-size: 28px;
+      }
+    }
+    @media (max-width: 480px) {
+      .intro-text h2 {
+        font-size: 26px;
+      }
+      .intro-text p {
+        font-size: 14px;
+      }
+      .btn {
+        padding: 8px 18px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>REALLY GREAT SITE</h1>
+    <nav>
+      <a href="#home" class="active">HOME</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </header>
+
+  <!-- Intro Section -->
+  <section id="home" class="intro">
+          <img src="data:image/png;base64,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" alt="Avery Davis">
+
+    <div class="intro-text">
+      <h2>Hi! <br>I'm Thaslima Naseerin.M</h2>
+      <h3>B.com, Computer Application.</h3>
+      <h4>Krishnasamy College of Arts, Science and Management for Women.</h4>
+      <p>I recently completed my bachelor's degree and a full stack developer course.</p>
+      <p>I love building clean, interactive websites using <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>.</p>
+      <p>Outside of coding, I enjoy playing chess ♟ and watching movies 🎬.</p>
+      <a href="#" class="btn">View Work</a>
+    </div>
+  </section>
+
+  <!-- Skills / About -->
+  <section id="about" class="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <div class="skill-card">
+        <img src="https://img.icons8.com/?size=160&id=D2Hi2VkJSi33&format=png" alt="HTML">
+        <div class="stars">★★★★★</div>
+        <p>HTML</p>
+      </div>
+      <div class="skill-card">
+        <img src="https://img.icons8.com/?size=160&id=YjeKwnSQIBUq&format=png" alt="CSS">
+        <div class="stars">★★★★★</div>
+        <p>CSS</p>
+      </div>
+      <div class="skill-card">
+        <img src="https://img.icons8.com/?size=160&id=zuK0mtFDZAfG&format=png" alt="JavaScript">
+        <div class="stars">★★★★★</div>
+        <p>JavaScript</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact-section">
+    <h2>Ready to work with me?</h2>
+    <h3>Contact Me</h3>
+    <div class="contact-info">
+      <p>Email: <a href="mailto:tnaseerin@gmail.com">tnaseerin@gmail.com</a></p>
+      <p>Phone: <a href="tel:+917448539297">+91 7448539297</a></p>
+      <p>
+        Follow me:
+        <a href="https://github.com/tnaseerin-ctrl" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/thaslima-naseerin-bba3b298" target="_blank">LinkedIn</a>
+      </p>
+      <p>Made with ❤ by Thaslima | © 2025</p>
+    </div>
+  </section>
+
+  <!-- JS for scroll active link -->
+  <script>
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 70; // header height adjust
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
