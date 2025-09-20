@@ -1,4 +1,7 @@
 # my-potfolio website
+
+file:///C:/Users/tnase/OneDrive/Documents/potfolio%20project/mypotfolio1.html
+
 this is my personal potfolio website,built with HTML,CSS AND JAVASCRIPT.
 it showcase my skills,project,and provides a way to contact me.
 
